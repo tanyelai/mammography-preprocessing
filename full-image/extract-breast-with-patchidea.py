@@ -166,10 +166,10 @@ def process_image(image_file, image_dir, output_dir, patch_size, stride, black_t
 
 
 
-def create_patch_dataset(image_dir, breast_annotations_file, output_dir, 
+def create_dataset(image_dir, breast_annotations_file, output_dir, 
                          patch_size, stride, black_threshold, white_threshold, target_size=None):
     """
-    Create a dataset of patches from the images in the image directory.
+    Create the dataset by extracting the largest rectangle from each image.
     """
     df_breast_annotations = pd.read_csv(breast_annotations_file)
     os.makedirs(output_dir, exist_ok=True)
@@ -239,7 +239,7 @@ def test(image_dir, breast_annotations_file, output_dir, patch_size, stride, bla
 
 
 
-# create_patch_dataset(
+# create_dataset(
 #     image_dir="/home/info/workspace/data/images",
 #     breast_annotations_file="/home/info/workspace/annotations/finding_annotations.csv",
 #     output_dir="/home/info/workspace/data/images-patchcut-1024x1024",
