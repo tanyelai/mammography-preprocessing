@@ -23,15 +23,15 @@ def read_annotations(csv_path, set_type):
 def downsample_and_save_data(data_dir, save_dir, set_type, annotations_path):
     data_transforms = {
         'training': transforms.Compose([
-            transforms.Resize((1024, 1024)),
+            #transforms.Resize((1024, 1024)),
             transforms.ToTensor(),
         ]),
         'validation': transforms.Compose([
-            transforms.Resize((1024, 1024)),
+            #transforms.Resize((1024, 1024)),
             transforms.ToTensor(),
         ]),
         'test': transforms.Compose([
-            transforms.Resize((1024, 1024)),
+            #transforms.Resize((1024, 1024)),
             transforms.ToTensor(),
         ]),
     }
